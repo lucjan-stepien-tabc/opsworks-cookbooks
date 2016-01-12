@@ -45,3 +45,10 @@ export LANG
 ## This will produce a verbose output on package installations of web server modules and web application
 ## installations which interact with Apache
 #export APACHE2_MAINTSCRIPT_DEBUG=1
+
+export TIX_BASE=<%=node[:deploy][:tix][:absolute_document_root].chomp('/')%>
+	
+<%=node[:apache][:prefork][:server_message]%>
+export wsgi_default_procs=<%=node[:apache][:prefork][:wsgi_default_procs]%>
+export wsgi_himem_procs=<%=node[:apache][:prefork][:wsgi_himem_procs]%>
+export wsgi_accesscontrol_procs=<%=node[:apache][:prefork][:wsgi_accesscontrol_procs]%>
